@@ -38,6 +38,11 @@ function setLang(lang) {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     currentLang = lang;
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) {
+        langToggle.title = lang === "en" ? "تغيير اللغة" : "Change Language";
+        langToggle.setAttribute("aria-label", langToggle.title);
+    }
 
     document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
@@ -48,9 +53,22 @@ function setLang(lang) {
 
     const langLabel = document.getElementById("lang-label");
     if (langLabel) {
-        langLabel.textContent = lang === "en" ? "AR" : "EN";
+        langLabel.textContent = lang === "en" ? "ع" : "EN";
+
+    }
+
+    // 🔁 التحديث السليم للتولتيب والزر
+    const btn = document.getElementById("backToTop");
+    if (btn) {
+        const title = lang === "ar" ? "العودة للأعلى" : "Back to top";
+        btn.title = title;
+        btn.setAttribute("aria-label", title);
+
+        const tooltip = document.getElementById("top-tooltip");
+        if (tooltip) tooltip.textContent = title;
     }
 }
+
 
 function toggleLang() {
     const newLang = currentLang === "en" ? "ar" : "en";
@@ -211,6 +229,28 @@ function loadRandomVideo() {
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(loadRandomVideo, 3000);
 });
+
+// Back to Top Button Logic
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = "flex";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
+
+backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// تحديث التولتيب حسب اللغة
+const btn = document.getElementById("backToTop");
+if (btn) {
+    btn.title = currentLang === "ar" ? "العودة للأعلى" : "Back to top";
+    btn.setAttribute("aria-label", btn.title);
+}
 
 
 const dynamicSlogans = {

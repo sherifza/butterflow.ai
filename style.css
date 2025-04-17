@@ -376,6 +376,123 @@ html[dir="rtl"] .hero-subline span {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Footer Styles */
+footer {
+    background: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    margin-top: 4rem;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+footer .footer-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+footer .footer-links a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: var(--hover-color);
+}
+
+footer small {
+    display: block;
+    margin-top: 1rem;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+footer .social {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer .social a {
+    font-size: 1.2rem;
+    color: var(--main-color);
+    transition: 0.3s ease;
+}
+
+footer .social a:hover {
+    color: var(--hover-color);
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    position: fixed;
+}
+
+#backToTop:hover {
+    background-color: var(--hover-color);
+}
+#backToTop svg {
+    width: 24px;
+    height: 24px;
+}
+/* Move button to left in RTL */
+html[dir="rtl"] #backToTop {
+    right: auto;
+    left: 30px;
+}
+
+/* Tooltip Styling */
+#backToTop .tooltip {
+    position: absolute;
+    bottom: 110%;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+#backToTop:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RTL Tooltip Placement */
+html[dir="rtl"] #backToTop .tooltip {
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+}
+
 
 
 /* Responsive Design */
