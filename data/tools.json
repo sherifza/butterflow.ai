@@ -1,0 +1,33 @@
+{
+  "postflow": {
+    "title": "PostFlow",
+    "tagline": "Effortless social media automation.",
+    "cta": "Try PostFlow Now",
+    "image": "/images/tools/postflow.png",
+    "problem": "Managing daily posts wastes time and breaks focus.",
+    "solution": "PostFlow lets you schedule once and automate your brand presence.",
+    "steps": [
+      "Connect your accounts",
+      "Add your posts and media",
+      "Pick dates and go live",
+      "PostFlow does the rest"
+    ],
+    "features": [
+      {
+        "title": "Cross-Platform Posting",
+        "desc": "Schedule once, post everywhere.",
+        "icon": "📅"
+      },
+      {
+        "title": "Media Library",
+        "desc": "Upload, reuse, and organize images and videos.",
+        "icon": "🖼️"
+      },
+      {
+        "title": "Analytics Dashboard",
+        "desc": "Track engagement and performance in real time.",
+        "icon": "📊"
+      }
+    ]
+  }
+}

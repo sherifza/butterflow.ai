@@ -77,50 +77,13 @@ function toggleLang() {
 
 window.addEventListener("DOMContentLoaded", () => {
     setLang("en");
+    setTimeout(() => {
+        showBackgroundImage();
+    }, 500);
+
 });
 
 
-// 🎥 ButterFlow Hero Video Sequence
-
-const videoURLs = {
-    landscape: [
-        "https://player.vimeo.com/video/1009586992",
-        "https://player.vimeo.com/video/1009587378",
-        "https://player.vimeo.com/video/1009587557",
-        "https://player.vimeo.com/video/1009587923",
-        "https://player.vimeo.com/video/1009588022",
-        "https://player.vimeo.com/video/1009151355",
-        "https://player.vimeo.com/video/1009586820",
-        "https://player.vimeo.com/video/1009155284"
-    ],
-    portrait: [
-        "https://player.vimeo.com/video/1009587120",
-        "https://player.vimeo.com/video/1009587522",
-        "https://player.vimeo.com/video/1009587578",
-        "https://player.vimeo.com/video/1009587672",
-        "https://player.vimeo.com/video/1009587718",
-        "https://player.vimeo.com/video/1009587794",
-        "https://player.vimeo.com/video/1009151870",
-        "https://player.vimeo.com/video/1009586313"
-    ]
-};
-
-let playedVideos = [];
-
-function initializeVideoPool() {
-    const isPortrait = window.innerWidth <= 768;
-    const orientation = isPortrait ? 'portrait' : 'landscape';
-    playedVideos = [...videoURLs[orientation]];
-}
-
-
-function getRandomVideoURL() {
-    if (playedVideos.length === 0) {
-        initializeVideoPool();
-    }
-    const randomIndex = Math.floor(Math.random() * playedVideos.length);
-    return playedVideos.splice(randomIndex, 1)[0];
-}
 
 function typewriterEffect(message, targetId) {
     const target = document.getElementById(targetId);
@@ -171,64 +134,6 @@ function hideBackgroundImage() {
         }, 1000);
     }
 }
-
-function createIframe(videoURL) {
-    const iframe = document.createElement("iframe");
-    iframe.id = "hero-video";
-    iframe.src = `${videoURL}?autoplay=1&muted=1&loop=0&background=1`;
-    iframe.frameBorder = "0";
-    iframe.allow = "autoplay; fullscreen; picture-in-picture";
-    iframe.allowFullscreen = true;
-    return iframe;
-}
-
-function setupVideoPlayer(videoURL, iframe, container) {
-    const player = new Vimeo.Player(iframe);
-
-    player.on("play", () => {
-        hideBackgroundImage();
-    });
-
-    player.on("ended", () => {
-        container.removeChild(iframe);
-        showBackgroundImage();
-
-        setTimeout(() => {
-            const nextURL = getRandomVideoURL();
-            const newIframe = createIframe(nextURL);
-            container.appendChild(newIframe);
-            setupVideoPlayer(nextURL, newIframe, container);
-        }, 3000);
-    });
-
-    player.on("error", error => {
-        console.error("ButterFlow Video Error:", error);
-    });
-}
-
-function loadRandomVideo() {
-    const container = document.getElementById("hero-right");
-    if (!container) {
-        console.error("Missing #hero-right container");
-        return;
-    }
-
-    initializeVideoPool();
-    const firstURL = getRandomVideoURL();
-
-    const oldIframe = document.getElementById("hero-video");
-    if (oldIframe) {
-        container.removeChild(oldIframe);
-    }
-
-    const iframe = createIframe(firstURL);
-    container.appendChild(iframe);
-    setupVideoPlayer(firstURL, iframe, container);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(loadRandomVideo, 3000);
-});
 
 // Back to Top Button Logic
 const backToTopBtn = document.getElementById("backToTop");

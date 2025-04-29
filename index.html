@@ -8,9 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="https://player.vimeo.com/api/player.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 
@@ -32,23 +30,20 @@
     </nav>
 </header>
 
-<!-- Hero Section (Split Layout) -->
 <section id="hero" class="hero-split">
+
     <div class="hero-left">
         <h1>ButterFlow.ai</h1>
-        <p class="hero-subline"><span id="dynamic-subline" data-key="hero_sub">When human love meets AI intelligence, automation becomes art 💛</span></p>
-        <a href="#contact" class="btn" data-key="cta_btn">Start Your Journey</a>
+        <p class="hero-subline"><span id="dynamic-subline">Less busywork. More real work.</span></p>
+        <a href="#contact" class="btn">Start Your Journey</a>
     </div>
-
     <div class="hero-right" id="hero-right">
-        <!-- Pause Logo Background -->
         <div id="hero-background" class="hero-background">
             <img src="images/logo.png" alt="ButterFlow Logo" class="hero-pause-logo" />
         </div>
-
-        <!-- Vimeo iframe will be injected here -->
     </div>
 </section>
+
 
 <!-- About Section -->
 <section class="section" id="about">
@@ -60,62 +55,100 @@
     </div>
 </section>
 
-<!-- Services Section -->
-<section class="section" id="services">
+<!-- ButterFlow Tools Showcase -->
+<section class="section" id="tools">
     <div class="container">
-        <h2 data-key="services_title">Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <i class="fas fa-robot card-icon"></i>
-                <h3 data-key="service_1">Automated Social Media Posting</h3>
-                <p data-key="service_1_desc">Save time and keep your content flowing with smart, scheduled posts.</p>
+        <h2 class="section-title">Meet the Tools That Power the Flow</h2>
+        <div class="tools-grid">
+            <!-- PostFlow -->
+            <div class="tool-card">
+                <img src="images/postflow-logo.png" alt="PostFlow Logo" class="tool-logo">
+                <h3>PostFlow</h3>
+                <p class="tagline">Post once. Watch it flow.</p>
+                <p>Effortless social media automation that keeps your brand active while you sleep.</p>
             </div>
-            <div class="card">
-                <i class="fas fa-envelope-open-text card-icon"></i>
-                <h3 data-key="service_2">Smart Email Workflows</h3>
-                <p data-key="service_2_desc">Engage customers with personalized, automated email journeys.</p>
+
+            <!-- AppointFlow -->
+            <div class="tool-card">
+                <img src="images/appointflow-logo.png" alt="AppointFlow Logo" class="tool-logo">
+                <h3>AppointFlow</h3>
+                <p class="tagline">Appointments that book themselves.</p>
+                <p>Let clients book you in seconds, with reminders and integrations handled automatically.</p>
             </div>
-            <div class="card">
-                <i class="fas fa-users-cog card-icon"></i>
-                <h3 data-key="service_3">Integrated Client Management</h3>
-                <p data-key="service_3_desc">Centralize your leads, tasks, and communication in one place.</p>
+            <!-- LeadFlow -->
+            <div class="tool-card">
+                <img src="images/leadflow-logo.png" alt="LeadFlow Logo" class="tool-logo">
+                <h3>LeadFlow</h3>
+                <p class="tagline">Leads that don’t leak.</p>
+                <p>Capture, qualify, and follow-up your leads — all in one connected workflow.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials Section -->
+<section class="full-highlight">
+    <div class="highlight-inner">
+        <div class="highlight-text">
+            <h2>📍 ContactFlow</h2>
+            <p>Collects public business data from Google Maps and saves it in Excel. Ideal for B2B outreach, growth, and prospecting.</p>
+            <a href="#contact" class="btn">Request Access</a>
+        </div>
+        <div class="highlight-image">
+            <img src="images/contactflow-logo.png" alt="ContactFlow Preview">
+        </div>
+    </div>
+</section>
+
+
+
 <section class="section testimonials" id="testimonials">
     <div class="container">
         <h2>What Our Users Say</h2>
-        <div class="testi-grid">
+        <div class="testi-carousel">
+            <!-- ElChefBot AI -->
             <div class="testi-card">
-                <p>"ButterFlow helped me reclaim hours every week. Scheduling content is now a breeze!"</p>
+                <img src="images/people/elchefbot.jpg" alt="ElChefBot AI" class="avatar top" />
                 <div class="testi-info">
-                    <img src="https://uifaces.co/our-content/donated/6MWH9Xi_.jpg" alt="Anna" class="avatar">
-                    <span>Anna L.</span>
-                    <small>Social Media Manager</small>
+                    <span>ElChefBot 🤖</span>
+                    <small>AI Marketing Agent · TheChefMap</small>
                 </div>
+                <p>“I was hired to save money and I hired ButterFlow to save memory.”</p>
             </div>
+
+            <!-- Sherif -->
             <div class="testi-card">
-                <p>"Our email campaigns used to take days — now we launch in minutes. Game changer!"</p>
+                <img src="images/people/sherif.jpg" alt="Sherif Zaki" class="avatar top" />
                 <div class="testi-info">
-                    <img src="https://uifaces.co/our-content/donated/vIqzOHXj.jpg" alt="Jason" class="avatar">
-                    <span>Jason M.</span>
-                    <small>Marketing Director</small>
+                    <span>Sherif Zaki</span>
+                    <small>Automation Expert · Founder of YomY</small>
                 </div>
+                <p>“With LeadFlow, I finally stopped chasing leads manually...”</p>
             </div>
+
+            <!-- Yasmin -->
             <div class="testi-card">
-                <p>"I use ButterFlow to manage 20+ clients, and I couldn't do it without their automation magic."</p>
+                <img src="images/people/yasmin.jpg" alt="Yasmin Zaki" class="avatar top" />
                 <div class="testi-info">
-                    <img src="https://uifaces.co/our-content/donated/KtCFjlD4.jpg" alt="Fatima" class="avatar">
-                    <span>Fatima R.</span>
-                    <small>Freelancer</small>
+                    <span>Yasmin Zaki</span>
+                    <small>Beauty Influencer · Founder of YasmZee</small>
                 </div>
+                <p>“PostFlow is my silent partner. My content goes live on time...”</p>
+            </div>
+
+            <!-- Ahmed -->
+            <div class="testi-card">
+                <img src="images/people/ahmed.jpg" alt="Ahmed N." class="avatar top" />
+                <div class="testi-info">
+                    <span>Ahmed N.</span>
+                    <small>Barber · Owner of MEKK Studio</small>
+                </div>
+                <p>“AppointFlow reminds my clients like clockwork — I stopped chasing no-shows.”</p>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <!-- Clients Marquee -->
 <section class="section clients-marquee" id="clients">
@@ -123,18 +156,16 @@
         <h2>Trusted by Teams Worldwide</h2>
         <div class="marquee">
             <div class="marquee-track">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/HubSpot_Logo.svg" alt="HubSpot" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/Mailchimp_Logo_2018.svg/512px-Mailchimp_Logo_2018.svg.png" alt="Mailchimp" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Trello_logo.svg" alt="Trello" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Canva_Logo.svg" alt="Canva" height="48"/>
+                <img src="/images/clients/chefmap.png" alt="ChefMap"/>
+                <img src="/images/clients/yasmzee.png" alt="YasmZee"/>
+                <img src="/images/clients/yomy.png" alt="YomY"/>
+                <img src="/images/clients/elchefbot.png" alt="ElChefBot"/>
 
                 <!-- Repeated -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/HubSpot_Logo.svg" alt="HubSpot" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/Mailchimp_Logo_2018.svg/512px-Mailchimp_Logo_2018.svg.png" alt="Mailchimp" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Trello_logo.svg" alt="Trello" height="48"/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Canva_Logo.svg" alt="Canva" height="48"/>
+                <img src="/images/clients/chefmap.png" alt="ChefMap"/>
+                <img src="/images/clients/yasmzee.png" alt="YasmZee"/>
+                <img src="/images/clients/yomy.png" alt="YomY"/>
+                <img src="/images/clients/elchefbot.png" alt="ElChefBot"/>
             </div>
         </div>
     </div>
