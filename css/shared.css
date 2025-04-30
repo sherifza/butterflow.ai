@@ -125,7 +125,7 @@ nav a:hover {
     height: auto;
 }
 
-.hero-left .btn {
+.hero-left .btn, .full-highlight .btn{
     background-color: var(--main-color);
     color: #fff;
     padding: 0.9rem 2rem;
@@ -216,6 +216,7 @@ nav a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 320px;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 .tool-card:hover {

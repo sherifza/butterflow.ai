@@ -4,46 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tool Page</title>
+    <link rel="stylesheet" href="/css/shared.css" />
     <link rel="stylesheet" href="/css/tool.css" />
 </head>
 <body>
+<!-- Header -->
+<div id="site-header"></div>
 
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="hero-content">
-        <h1 id="tool-title">Tool Name</h1>
-        <p id="tool-tagline">Brief description of the tool.</p>
+        <h1 id="tool-title">Loading...</h1>
+        <p id="tool-tagline"></p>
         <a href="#" class="btn" id="tool-cta">Book a Demo</a>
     </div>
     <div class="hero-icon">
-        <img id="tool-icon" src="/images/logo.svg" alt="Tool Logo">
+        <img id="tool-icon" src="/images/logo.png" alt="Tool Logo">
     </div>
 </section>
 
 <!-- The Problem -->
 <section class="section">
-    <h2 id="problem-title">The Problem</h2>
-    <p id="tool-problem">Problem description will appear here.</p>
+    <h2 id="tool-problem-title">The Problem</h2>
+    <p id="tool-problem"></p>
 </section>
 
 <!-- The Solution -->
 <section class="section">
-    <h2 id="solution-title">The Solution</h2>
-    <p id="tool-solution">Solution content goes here.</p>
+    <h2 id="tool-solution-title">The Solution</h2>
+    <p id="tool-solution"></p>
 </section>
 
 <!-- How It Works -->
 <section class="section">
     <h2>How It Works</h2>
-    <ul id="tool-steps"></ul>
+    <ul id="tool-steps" class="how-it-works-list"></ul>
 </section>
 
-<!-- Features -->
+
+<!-- Top Features -->
 <section class="section">
     <h2>Top Features</h2>
     <div class="feature-grid" id="tool-features"></div>
 </section>
 
+<div id="site-footer"></div>
+<!-- Back to Top Button -->
+<button id="backToTop" title="" aria-label="Back to top">
+    <!-- Inline SVG from Lucide.dev -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         class="lucide lucide-chevron-up" viewBox="0 0 24 24">
+        <path d="m18 15-6-6-6 6" />
+    </svg>
+    <span class="tooltip" id="top-tooltip">Back to top</span>
+</button>
+<script src="/js/butterflow.js"></script>
 <script src="/js/tool.js"></script>
 </body>
 </html>

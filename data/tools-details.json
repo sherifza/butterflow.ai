@@ -1,0 +1,125 @@
+{
+  "postflow": {
+    "name": "PostFlow",
+    "title": "PostFlow",
+    "tagline": "Post once. Watch it flow.",
+    "cta": "Start Posting",
+    "cta_link": "#post",
+    "image": "/images/tools/postflow-logo.png",
+    "problem": "Posting manually to all social platforms takes time, causes burnout, and leads to inconsistent branding.",
+    "solution_title": "Smart Social Media Automation",
+    "solution": "PostFlow helps you schedule your content, automate your posting across platforms like Facebook and LinkedIn, and stay visible without lifting a finger.",
+    "steps": [
+      "Fill in your content sheet with posts, images, and timing.",
+      "Connect your platforms and set your posting times.",
+      "Let PostFlow publish for you — on time, every time."
+    ],
+    "features": [
+      {
+        "title": "Multi-Platform Support",
+        "desc": "Publish to Facebook, LinkedIn, and more with a single setup."
+      },
+      {
+        "title": "Visual Scheduling",
+        "desc": "Stay in control of your calendar and adjust posts with ease."
+      },
+      {
+        "title": "Image & Video Friendly",
+        "desc": "Easily attach visuals to make your posts stand out."
+      }
+    ]
+  },
+
+  "appointflow": {
+    "name": "AppointFlow",
+    "title": "AppointFlow",
+    "tagline": "Appointments that book — and remind — themselves.",
+    "cta": "Automate My Appointments",
+    "cta_link": "#appointments",
+    "image": "/images/tools/appointflow-logo.png",
+    "problem": "Clinics and service providers often lose clients due to missed or forgotten appointments.",
+    "solution_title": "24-Hour Smart Reminders",
+    "solution": "AppointFlow lets you schedule client appointments and sends automatic reminders 24 hours before the session, reducing no-shows and improving efficiency.",
+    "steps": [
+      "Clients book their appointments through your system.",
+      "AppointFlow tracks the time and contact details.",
+      "24 hours before the session, the client gets a reminder via email or SMS."
+    ],
+    "features": [
+      {
+        "title": "Automated Reminders",
+        "desc": "No need to call manually — the system does it for you."
+      },
+      {
+        "title": "Client-Friendly Experience",
+        "desc": "Reminders sent in clear, polite formats via multiple channels."
+      },
+      {
+        "title": "Easy Setup for Clinics & Freelancers",
+        "desc": "Perfect for dental clinics, therapists, salons, and more."
+      }
+    ]
+  },
+
+  "leadflow": {
+    "name": "LeadFlow",
+    "title": "LeadFlow",
+    "tagline": "Leads that don't leak.",
+    "cta": "Capture My Leads",
+    "cta_link": "#leads",
+    "image": "/images/tools/leadflow-logo.png",
+    "problem": "Business owners often miss opportunities because they don’t know when a potential client shows interest.",
+    "solution_title": "Instant Lead Alerts",
+    "solution": "LeadFlow captures inquiries from your forms and immediately notifies you or your team — so no lead goes unanswered.",
+    "steps": [
+      "A client submits a form or expresses interest.",
+      "LeadFlow collects and organizes their data.",
+      "You get an instant alert via email or WhatsApp so you can respond fast."
+    ],
+    "features": [
+      {
+        "title": "Real-Time Notifications",
+        "desc": "Never miss a hot lead again — respond while they’re still thinking about you."
+      },
+      {
+        "title": "Flexible Channel Delivery",
+        "desc": "Receive alerts via email, WhatsApp, or integrate with your CRM."
+      },
+      {
+        "title": "Simple Setup",
+        "desc": "Works with your existing contact forms or landing pages."
+      }
+    ]
+  },
+
+  "contactflow": {
+    "name": "ContactFlow",
+    "title": "ContactFlow (Service)",
+    "tagline": "Google Maps scraping as a service.",
+    "cta": "Request This Service",
+    "cta_link": "#contactflow",
+    "image": "/images/tools/contactflow-logo.png",
+    "problem": "Manually collecting business contact data from Google Maps is time-consuming, error-prone, and unscalable.",
+    "solution_title": "Automated Contact Extraction",
+    "solution": "ContactFlow is a service that gathers relevant business data (name, phone, website, category, etc.) directly from Google Maps and delivers it neatly into a Google Sheet — filtered by your needs.",
+    "steps": [
+      "You send us your target keywords or industries.",
+      "We run a Google Maps scan using automated tools.",
+      "You receive a cleaned, structured sheet with contact info ready to use."
+    ],
+    "features": [
+      {
+        "title": "Human-Filtered Results",
+        "desc": "We clean and validate the data before delivering."
+      },
+      {
+        "title": "Customizable Filters",
+        "desc": "Target cities, industries, or specific keywords."
+      },
+      {
+        "title": "Delivered in Google Sheets",
+        "desc": "Easy to review, import, and connect to your lead system."
+      }
+    ]
+  }
+}
