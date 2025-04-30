@@ -76,6 +76,7 @@
     position: relative;
 }
 
+
 #tool-steps li::before {
     content: "\2022";
     position: absolute;

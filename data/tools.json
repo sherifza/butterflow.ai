@@ -3,21 +3,60 @@
     "name": "PostFlow",
     "page": "postflow",
     "logo": "/images/tools/postflow-logo.png",
-    "tagline": "Post once. Watch it flow.",
-    "description": "Effortless social media automation that keeps your brand active while you sleep."
+    "tagline": {
+      "en": "Post once. Watch it flow.",
+      "ar": "انشر مرة واحدة... ودع PostFlow يتولّى المهمة"
+    },
+    "description": {
+      "en": "Effortless social media automation that keeps your brand active while you sleep.",
+      "ar": "نظام ذكي يُدير منشوراتك على المنصات الاجتماعية بسلاسة، ويُبقي علامتك التجارية حاضرة حتى أثناء نومك."
+    }
   },
   {
     "name": "AppointFlow",
     "page": "appointflow",
     "logo": "/images/tools/appointflow-logo.png",
-    "tagline": "Appointments that book themselves.",
-    "description": "Let clients book you in seconds, with reminders and integrations handled automatically."
+    "tagline": {
+      "en": "Appointments that book themselves.",
+      "ar": "مواعيد تُحدَّد تلقائيًا"
+    },
+    "description": {
+      "en": "Let clients book you in seconds, with reminders and integrations handled automatically.",
+      "ar": "يتيح لعملائك حجز مواعيدك خلال ثوانٍ، مع تذكيرات تلقائية وتكاملات سلسة مع أدواتك."
+    }
   },
   {
     "name": "LeadFlow",
     "page": "leadflow",
     "logo": "/images/tools/leadflow-logo.png",
-    "tagline": "Leads that don’t leak.",
-    "description": "Capture, qualify, and follow-up your leads — all in one connected workflow."
+    "tagline": {
+      "en": "Leads that don’t leak.",
+      "ar": "فرص تسويقية لا تفلت"
+    },
+    "description": {
+      "en": "Capture, qualify, and follow-up your leads — all in one connected workflow.",
+      "ar": "استقطب العملاء المحتملين، قيّمهم، وتابعهم بذكاء — من خلال نظام موحّد ومترابط."
+    }
+  },
+  {
+    "name": "ContactFlow",
+    "type": "service",
+    "logo": "/images/tools/contactflow-logo.png",
+    "title": {
+      "en": "📍 ContactFlow (Premium Service)",
+      "ar": "📍 ContactFlow (خدمة مميزة)"
+    },
+    "text": {
+      "en": "Not all tools are created equal. ContactFlow is our secret weapon — so powerful, we kept it to ourselves. Instead of offering it as a tool, we run it for you, delivering clean, structured business data from Google Maps — ready to boost your B2B outreach.",
+      "ar": "ليست كل الأدوات متساوية. ContactFlow هي سلاحنا السري — قوية جدًا لدرجة أننا أبقيناها لأنفسنا. بدلاً من تقديمها كأداة، نقوم بتشغيلها لك، ونسلمك بيانات أعمال نظيفة ومنسقة من خرائط Google — جاهزة لتعزيز مبيعات B2B."
+    },
+    "note": {
+      "en": "All data collected is publicly available information — no legal headaches, just smart execution.",
+      "ar": "جميع البيانات التي يتم جمعها متاحة علنًا — دون صداع قانوني، فقط تنفيذ ذكي."
+    },
+    "cta": {
+      "en": "Request Access",
+      "ar": "طلب الوصول"
+    }
   }
 ]

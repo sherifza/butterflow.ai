@@ -40,6 +40,11 @@ body {
     color: var(--main-color);
 }
 
+h2, .section h2 {
+    text-align: center;
+}
+
+
 .btn {
     background-color: var(--main-color);
     color: #fff;
@@ -94,9 +99,12 @@ header {
 nav ul {
     display: flex;
     gap: 1.5rem;
+    padding: 0;
+    margin: 0;
     list-style: none;
     align-items: center;
 }
+
 
 nav a {
     text-decoration: none;
@@ -153,4 +161,27 @@ footer {
 
 .social a:hover {
     color: var(--main-color);
+}
+
+.contactflow-highlight .btn {
+    margin-top: 1.5rem;
+}
+
+#contact .btn {
+    margin-top: 1.5rem;
+}
+
+html[dir="rtl"] .highlight-text {
+    text-align: right;
+    padding-right: 2rem;
+}
+
+html[dir="rtl"] .footer-links,
+html[dir="rtl"] .hero-left,
+html[dir="rtl"] .container {
+    text-align: right;
+}
+
+html[dir="rtl"] .btn {
+    margin-top: 1rem;
 }

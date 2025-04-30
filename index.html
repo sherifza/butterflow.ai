@@ -17,11 +17,10 @@
 <div id="site-header"></div>
 
 <section id="hero" class="hero-split">
-
     <div class="hero-left">
         <h1>ButterFlow.ai</h1>
         <p class="hero-subline"><span id="dynamic-subline">Less busywork. More real work.</span></p>
-        <a href="#contact" class="btn">Start Your Journey</a>
+        <a href="#contact" class="btn" data-key="cta_btn">Start Your Journey</a>
     </div>
     <div class="hero-right" id="hero-right">
         <div id="hero-background" class="hero-background">
@@ -30,38 +29,30 @@
     </div>
 </section>
 
-
 <!-- About Section -->
 <section class="section" id="about">
     <div class="container">
         <h2 data-key="about_title">What is ButterFlow?</h2>
-        <p data-key="about_text">
-            We are more than an automation company. ButterFlow is where creative minds and machines meet to make work effortless and life sweeter.
-        </p>
+        <p data-key="about_text"></p>
     </div>
 </section>
 
-<!-- ButterFlow Tools Showcase -->
+<!-- Tools Section -->
 <section class="section" id="tools">
     <div class="container">
-        <h2 class="section-title">Meet the Tools That Power the Flow</h2>
-        <div class="tools-grid" id="tools-grid">
-            <!-- The cards will be injected dynamically here from tools.json -->
-        </div>
+        <h2 class="section-title" data-key="services_title">Meet the Tools That Power the Flow</h2>
+        <div class="tools-grid" id="tools-grid"></div>
     </div>
 </section>
 
-
-<section class="full-highlight contactflow-highlight">
+<!-- ContactFlow Highlight -->
+<section class="full-highlight contactflow-highlight" id="contactflow-highlight">
     <div class="highlight-inner">
         <div class="highlight-text">
-            <h2><span style="font-size: 1.8rem;">📍</span> ContactFlow <span style="font-weight: normal;">(Premium Service)</span></h2>
-            <p>
-                Not all tools are created equal. <strong>ContactFlow</strong> is our secret weapon — so powerful, we kept it to ourselves.<br />
-                Instead of offering it as a tool, we run it for you, delivering clean, structured business data from Google Maps — ready to boost your B2B outreach.<br /><br />
-                <small><em>All data collected is publicly available information — no legal headaches, just smart execution.</em></small>
-            </p>
-            <a href="/tool.html?name=contactflow" class="btn">Request Access</a>
+            <h2 id="cf-title"></h2>
+            <p id="cf-text"></p>
+            <small><em id="cf-note"></em></small>
+            <a href="/tool.html?name=contactflow" class="btn" id="cf-cta"></a>
         </div>
         <div class="highlight-image">
             <img src="/images/tools/contactflow-logo.png" alt="ContactFlow Logo">
@@ -69,71 +60,57 @@
     </div>
 </section>
 
-
-
-
-
+<!-- Testimonials -->
 <section class="section testimonials" id="testimonials">
     <div class="container">
-        <h2>What Our Users Say</h2>
-        <div class="testi-carousel">
-            <!-- ElChefBot AI -->
+        <h2 data-key="testimonials_title">What Our Users Say</h2>
+        <div class="testi-carousel no-scrollbar" style="overflow-x: auto; display: flex; gap: 1rem;">
             <div class="testi-card">
                 <img src="images/people/elchefbot.jpg" alt="ElChefBot AI" class="avatar top" />
                 <div class="testi-info">
                     <span>ElChefBot 🤖</span>
-                    <small>AI Marketing Agent · TheChefMap</small>
+                    <small>TheChefMap</small>
                 </div>
-                <p>“I was hired to save money and I hired ButterFlow to save memory.”</p>
+                <p data-key="testi_elchefbot">“I was hired to save money and I hired ButterFlow to save memory.”</p>
             </div>
-
-            <!-- Sherif -->
             <div class="testi-card">
                 <img src="images/people/sherif.jpg" alt="Sherif Zaki" class="avatar top" />
                 <div class="testi-info">
                     <span>Sherif Zaki</span>
-                    <small>Automation Expert · Founder of YomY</small>
+                    <small>YomY</small>
                 </div>
-                <p>“With LeadFlow, I finally stopped chasing leads manually...”</p>
+                <p data-key="testi_sherif">“With LeadFlow, I finally stopped chasing leads manually...”</p>
             </div>
-
-            <!-- Yasmin -->
             <div class="testi-card">
                 <img src="images/people/yasmin.jpg" alt="Yasmin Zaki" class="avatar top" />
                 <div class="testi-info">
                     <span>Yasmin Zaki</span>
-                    <small>Beauty Influencer · Founder of YasmZee</small>
+                    <small>YasmZee</small>
                 </div>
-                <p>“PostFlow is my silent partner. My content goes live on time...”</p>
+                <p data-key="testi_yasmin">“PostFlow is my silent partner. My content goes live on time...”</p>
             </div>
-
-            <!-- Ahmed -->
             <div class="testi-card">
                 <img src="images/people/ahmed.jpg" alt="Ahmed N." class="avatar top" />
                 <div class="testi-info">
                     <span>Ahmed N.</span>
-                    <small>Barber · Owner of MEKK Studio</small>
+                    <small>MEKK Studio</small>
                 </div>
-                <p>“AppointFlow reminds my clients like clockwork — I stopped chasing no-shows.”</p>
+                <p data-key="testi_ahmed">“AppointFlow reminds my clients like clockwork — I stopped chasing no-shows.”</p>
             </div>
         </div>
     </div>
 </section>
 
-
-
-<!-- Clients Marquee -->
+<!-- Clients -->
 <section class="section clients-marquee" id="clients">
     <div class="container">
-        <h2>Trusted by Teams Worldwide</h2>
+        <h2 data-key="clients_title">Trusted by Teams Worldwide</h2>
         <div class="marquee">
             <div class="marquee-track">
                 <img src="/images/clients/chefmap.png" alt="ChefMap"/>
                 <img src="/images/clients/yasmzee.png" alt="YasmZee"/>
                 <img src="/images/clients/yomy.png" alt="YomY"/>
                 <img src="/images/clients/elchefbot.png" alt="ElChefBot"/>
-
-                <!-- Repeated -->
                 <img src="/images/clients/chefmap.png" alt="ChefMap"/>
                 <img src="/images/clients/yasmzee.png" alt="YasmZee"/>
                 <img src="/images/clients/yomy.png" alt="YomY"/>
@@ -143,22 +120,19 @@
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact -->
 <section class="section" id="contact">
     <div class="container">
         <h2 data-key="contact_title">Let's Connect</h2>
-        <p data-key="contact_text">
-            Have an idea? Need automation? Let’s flow together — one smooth step at a time.
-        </p>
+        <p data-key="contact_text"></p>
         <a href="mailto:hello@butterflow.ai" class="btn">hello@butterflow.ai</a>
     </div>
 </section>
 
-<!-- Footer Section -->
+<!-- Footer -->
 <div id="site-footer"></div>
-<!-- Back to Top Button -->
 <button id="backToTop" title="" aria-label="Back to top">
-    <!-- Inline SVG from Lucide.dev -->
+        <!-- Inline SVG from Lucide.dev -->
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor"
          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
          class="lucide lucide-chevron-up" viewBox="0 0 24 24">
@@ -166,7 +140,6 @@
     </svg>
     <span class="tooltip" id="top-tooltip">Back to top</span>
 </button>
-
 
 <script src="/js/butterflow.js"></script>
 </body>

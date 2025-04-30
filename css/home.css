@@ -113,6 +113,7 @@
 .highlight-text {
     flex: 1;
     min-width: 280px;
+    text-align: left;
 }
 
 .highlight-text h2 {
@@ -146,6 +147,7 @@
     gap: 2rem;
     padding: 1rem;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .testi-carousel::-webkit-scrollbar {
@@ -241,7 +243,7 @@
     }
 
     .tool-logo {
-        max-width: 100px;
+        max-width: 90px;
     }
 
     .highlight-inner {
@@ -260,5 +262,18 @@
 
     .btn {
         margin-top: 1.5rem;
+    }
+
+    [dir="rtl"] .highlight-text {
+        text-align: right;
+    }
+
+    [dir="rtl"] .hero-left {
+        text-align: right;
+    }
+
+    [dir="rtl"] .footer-links,
+    [dir="rtl"] .social {
+        text-align: center;
     }
 }

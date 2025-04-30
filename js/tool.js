@@ -1,62 +1,83 @@
-// Get the tool name from the URL
-function getToolName() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("name")?.toLowerCase(); // always lowercase
-}
+// === TOOL PAGE ===
 
-// Load data from tools-details.json
-async function loadToolData() {
-    try {
-        const res = await fetch("/data/tools-details.json");
-        if (!res.ok) throw new Error("Failed to fetch tool data.");
-        const tools = await res.json();
+window.addEventListener("DOMContentLoaded", async () => {
+    const currentLang = localStorage.getItem("lang") || "en";
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
 
-        const toolName = getToolName();
-        if (!toolName) return;
+    await loadPartials(currentLang);
+    initToolPage(currentLang);
+});
 
-        const tool = tools[toolName]; // ✅ بدلنا find بـ access مباشر باستخدام المفتاح
+async function loadPartials(currentLang) {
+    const header = await fetch("/partials/header.html").then(res => res.text());
+    const footer = await fetch("/partials/footer.html").then(res => res.text());
+    document.getElementById("site-header").innerHTML = header;
+    document.getElementById("site-footer").innerHTML = footer;
 
-        if (!tool) {
-            document.body.innerHTML = "<h1>Tool not found</h1>";
-            return;
-        }
-
-        // Fill data
-        document.title = tool.title || tool.name;
-        document.getElementById("tool-title").textContent = tool.title || tool.name;
-        document.getElementById("tool-tagline").textContent = tool.tagline;
-        document.getElementById("tool-cta").textContent = tool.cta || "Book a Demo";
-        document.getElementById("tool-cta").href = tool.cta_link || "#";
-        document.getElementById("tool-icon").src = tool.image;
-
-        document.getElementById("tool-problem").textContent = tool.problem;
-        document.getElementById("tool-solution-title").textContent = tool.solution_title || "The Solution";
-        document.getElementById("tool-solution").textContent = tool.solution;
-
-        const stepsList = document.getElementById("tool-steps");
-        if (tool.steps?.length) {
-            tool.steps.forEach(step => {
-                const li = document.createElement("li");
-                li.textContent = step;
-                stepsList.appendChild(li);
-            });
-        }
-
-        const featureGrid = document.getElementById("tool-features");
-        if (tool.features?.length) {
-            tool.features.forEach(feat => {
-                const div = document.createElement("div");
-                div.className = "card";
-                div.innerHTML = `
-                    <h3>${feat.title}</h3>
-                    <p>${feat.desc}</p>
-                `;
-                featureGrid.appendChild(div);
-            });
-        }
-    } catch (err) {
-        console.error("Tool Page Error:", err);
+    const langToggle = document.getElementById("lang-toggle");
+    if (langToggle) {
+        langToggle.addEventListener("click", () => {
+            const newLang = currentLang === "en" ? "ar" : "en";
+            localStorage.setItem("lang", newLang);
+            location.reload();
+        });
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadToolData);
+async function initToolPage(currentLang) {
+    const toolName = new URLSearchParams(window.location.search).get("name")?.toLowerCase();
+    if (!toolName) return;
+
+    try {
+        const res = await fetch("/data/tools-details.json");
+        const tools = await res.json();
+        const tool = tools[toolName];
+
+        if (!tool) {
+            document.getElementById("tool-title").textContent = currentLang === "ar" ? "الأداة غير موجودة" : "Tool not found";
+            return;
+        }
+
+        renderTool(tool, currentLang);
+    } catch (err) {
+        console.error("Failed to load tool data:", err);
+    }
+}
+
+function renderTool(tool, lang) {
+    document.getElementById("tool-title").textContent = tool.title[lang];
+    document.getElementById("tool-tagline").textContent = tool.tagline[lang];
+    document.getElementById("tool-cta").textContent = tool.cta[lang];
+    document.getElementById("tool-cta").href = tool.cta_link || "#";
+    document.getElementById("tool-icon").src = tool.image;
+
+    document.getElementById("tool-problem-title").textContent = lang === "ar" ? "المشكلة" : "The Problem";
+    document.getElementById("tool-problem").textContent = tool.problem[lang];
+
+    document.getElementById("tool-solution-title").textContent = tool.solution_title[lang];
+    document.getElementById("tool-solution").textContent = tool.solution[lang];
+
+    document.querySelector(".how-it-works-list").previousElementSibling.textContent = lang === "ar" ? "كيف يعمل؟" : "How It Works";
+    const stepsList = document.getElementById("tool-steps");
+    stepsList.innerHTML = "";
+    stepsList.style.direction = lang === "ar" ? "rtl" : "ltr";
+    tool.steps[lang].forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        stepsList.appendChild(li);
+    });
+
+    document.querySelector("#tool-features").previousElementSibling.textContent = lang === "ar" ? "أهم الميزات" : "Top Features";
+    const featuresGrid = document.getElementById("tool-features");
+    featuresGrid.innerHTML = "";
+    tool.features.forEach(feature => {
+        const div = document.createElement("div");
+        div.className = "feature-card";
+        div.innerHTML = `
+            <h3>${feature.title[lang]}</h3>
+            <p>${feature.desc[lang]}</p>
+        `;
+        featuresGrid.appendChild(div);
+    });
+}
