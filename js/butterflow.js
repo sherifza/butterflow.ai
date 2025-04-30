@@ -116,12 +116,28 @@ function applyTranslation() {
 
     const btn = document.getElementById("backToTop");
     const tooltip = document.getElementById("top-tooltip");
-    if (btn && tooltip) {
+
+    if (btn) {
         const title = currentLang === "ar" ? "العودة للأعلى" : "Back to top";
         btn.title = title;
         btn.setAttribute("aria-label", title);
-        tooltip.textContent = title;
+
+        // فقط حدّث التولتيب إذا موجود فعلاً
+        if (tooltip) {
+            tooltip.textContent = title;
+
+            // اجعل التولتيب مخفيًا افتراضيًا لمنع التداخل
+            tooltip.style.display = "none";
+
+            btn.addEventListener("mouseenter", () => {
+                tooltip.style.display = "block";
+            });
+            btn.addEventListener("mouseleave", () => {
+                tooltip.style.display = "none";
+            });
+        }
     }
+
 }
 
 async function loadTools() {

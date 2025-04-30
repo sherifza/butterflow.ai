@@ -75,7 +75,7 @@ html[dir="rtl"] .footer-links {
 }
 
 html[dir="rtl"] nav ul {
-    flex-direction: row-reverse;
+    flex-direction: row!important;
 }
 
 html[dir="rtl"] .lang-switch button {
@@ -184,4 +184,38 @@ html[dir="rtl"] .container {
 
 html[dir="rtl"] .btn {
     margin-top: 1rem;
+}
+
+#backToTop .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    display: none;
+}
+#backToTop:hover .tooltip {
+    display: block;
+}
+
+/* الوضع الافتراضي للزر في اليمين */
+#backToTop {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* لو اللغة عربية، حطّه على اليسار */
+html[dir="rtl"] #backToTop {
+    right: auto;
+    left: 1.5rem;
 }

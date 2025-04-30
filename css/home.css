@@ -141,18 +141,14 @@
 
 .testi-carousel {
     display: flex;
-    flex-wrap: nowrap;
+    gap: 1rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 2rem;
-    padding: 1rem;
-    margin-top: 2rem;
-    justify-content: center;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
 }
 
-.testi-carousel::-webkit-scrollbar {
-    display: none;
-}
+
 
 .testi-card {
     background-color: #fff;
