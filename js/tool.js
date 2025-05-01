@@ -50,7 +50,7 @@ function renderTool(tool, lang) {
     document.getElementById("tool-title").textContent = tool.title[lang];
     document.getElementById("tool-tagline").textContent = tool.tagline[lang];
     document.getElementById("tool-cta").textContent = tool.cta[lang];
-    document.getElementById("tool-cta").href = tool.cta_link || "#";
+    document.getElementById("tool-cta").href = tool.cta_link || "mailto:hello@butterflow.ai";
     document.getElementById("tool-icon").src = tool.image;
 
     document.getElementById("tool-problem-title").textContent = lang === "ar" ? "المشكلة" : "The Problem";
