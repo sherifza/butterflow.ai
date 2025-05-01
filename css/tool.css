@@ -13,8 +13,11 @@
 }
 
 .hero-content {
-    flex: 1;
     text-align: left;
+}
+
+html[dir="rtl"] .hero-content {
+    text-align: right;
 }
 
 .hero-content h1 {
@@ -64,28 +67,28 @@
     list-style: none;
     padding: 0;
     margin-top: 2rem;
-    text-align: left;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: start;
 }
 
 #tool-steps li {
     margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
     position: relative;
 }
-
 
 #tool-steps li::before {
     content: "\2022";
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     top: 0;
     color: var(--main-color);
     font-size: 1.4rem;
     line-height: 1;
 }
+
 
 .feature-grid {
     display: grid;
@@ -122,6 +125,8 @@
     color: var(--text-color);
     line-height: 1.6;
 }
+
+
 
 @media (max-width: 767px) {
     .hero-section {

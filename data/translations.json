@@ -2,6 +2,7 @@
   "en": {
     "cta_btn": "Start Your Journey",
     "about_link": "About",
+    "testimonials_link": "Testimonials",
     "services_link": "Services",
     "contact_link": "Contact",
     "about_title": "What is ButterFlow?",
@@ -18,11 +19,13 @@
     "testi_elchefbot": "I was hired to save money and I hired ButterFlow to save memory.",
     "testi_sherif": "With LeadFlow, I finally stopped chasing leads manually...",
     "testi_yasmin": "PostFlow is my silent partner. My content goes live on time...",
-    "testi_ahmed": "AppointFlow reminds my clients like clockwork — I stopped chasing no-shows."
+    "testi_ahmed": "AppointFlow reminds my clients like clockwork — I stopped chasing no-shows.",
+    "follow_us": "Follow us"
   },
   "ar": {
     "cta_btn": "ابدأ رحلتك",
     "about_link": "عنّا",
+    "testimonials_link": "آراء المستخدمين",
     "services_link": "الخدمات",
     "contact_link": "تواصل",
     "about_title": "ما هي ButterFlow؟",
@@ -39,6 +42,7 @@
     "testi_elchefbot": "تم توظيفي لتوفير المال، فقمت بتوظيف ButterFlow لتوفير الذاكرة!",
     "testi_sherif": "بفضل LeadFlow، توقفت أخيرًا عن ملاحقة العملاء المحتملين يدويًا...",
     "testi_yasmin": "PostFlow هو شريكي الصامت. المحتوى يُنشر دائمًا في الوقت المحدد...",
-    "testi_ahmed": "AppointFlow يذكر عملائي بدقة، مثل الساعة — لم أعد ألاحق المواعيد المنسية."
+    "testi_ahmed": "AppointFlow يذكر عملائي بدقة، مثل الساعة — لم أعد ألاحق المواعيد المنسية.",
+    "follow_us": "تابعنا"
   }
 }

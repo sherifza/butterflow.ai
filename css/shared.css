@@ -9,6 +9,11 @@
     --font: 'Quicksand', sans-serif;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -124,14 +129,22 @@ nav a:hover {
     font-size: 1rem;
     color: var(--text-color);
 }
-
 /* === Footer Fixes === */
 footer {
     background-color: #fff;
-    text-align: center;
     padding: 2rem 1rem;
     font-size: 0.9rem;
     color: #777;
+}
+
+footer .container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    direction: inherit;
 }
 
 .footer-links {
@@ -203,7 +216,6 @@ html[dir="rtl"] .btn {
     display: block;
 }
 
-/* الوضع الافتراضي للزر في اليمين */
 #backToTop {
     position: fixed;
     bottom: 1.5rem;
@@ -214,8 +226,12 @@ html[dir="rtl"] .btn {
     justify-content: center;
 }
 
-/* لو اللغة عربية، حطّه على اليسار */
 html[dir="rtl"] #backToTop {
     right: auto;
     left: 1.5rem;
+}
+@media (max-width: 768px) {
+    nav ul {
+        gap: 0.6rem;
+    }
 }

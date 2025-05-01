@@ -46,6 +46,7 @@ async function initToolPage(currentLang) {
 }
 
 function renderTool(tool, lang) {
+    document.title = `ButterFlow.ai – ${tool.title[lang]}`;
     document.getElementById("tool-title").textContent = tool.title[lang];
     document.getElementById("tool-tagline").textContent = tool.tagline[lang];
     document.getElementById("tool-cta").textContent = tool.cta[lang];
@@ -73,7 +74,7 @@ function renderTool(tool, lang) {
     featuresGrid.innerHTML = "";
     tool.features.forEach(feature => {
         const div = document.createElement("div");
-        div.className = "feature-card";
+        div.className = "card";
         div.innerHTML = `
             <h3>${feature.title[lang]}</h3>
             <p>${feature.desc[lang]}</p>

@@ -2,18 +2,67 @@
 
 let currentLang = localStorage.getItem("lang") || "en";
 let translations = {};
-let fixedSlogan = {
-    en: "🦋 Where automation flows and creativity grows.",
-    ar: "🦋 حيث تنساب الأتمتة ويزدهر الإبداع."
+let slogans = [];
+let sloganInterval;
+let sloganIndex = 0;
+let tabActive = true;
+
+const fixedStartSlogan = {
+    en: "🦋 Automate, Fly & Grow.",
+    ar: "🦋 أتمت، حلّق، وتطوّر."
 };
+
+function showDefaultSlogan() {
+    const subline = document.getElementById("dynamic-subline");
+    if (subline) subline.textContent = fixedStartSlogan[currentLang];
+}
+
+async function fetchSlogans() {
+    try {
+        const res = await fetch("/data/slogans.json");
+        const data = await res.json();
+        slogans = data[currentLang] || data["en"];
+        setTimeout(() => startSloganRotation(), 3000); // delay after default slogan
+    } catch (err) {
+        slogans = [fixedStartSlogan[currentLang]];
+    }
+}
+
+function startSloganRotation() {
+    clearInterval(sloganInterval);
+    const subline = document.getElementById("dynamic-subline");
+    if (!subline || slogans.length === 0) return;
+
+    const typewriter = (text) => {
+        subline.textContent = "";
+        let i = 0;
+        const interval = setInterval(() => {
+            if (!tabActive) return clearInterval(interval);
+            subline.textContent += text.charAt(i);
+            i++;
+            if (i >= text.length) clearInterval(interval);
+        }, 40);
+    };
+
+    typewriter(slogans[sloganIndex]);
+
+    sloganInterval = setInterval(() => {
+        if (!tabActive) return;
+        sloganIndex = (sloganIndex + 1) % slogans.length;
+        typewriter(slogans[sloganIndex]);
+    }, 6000);
+}
+
+document.addEventListener("visibilitychange", () => {
+    tabActive = !document.hidden;
+});
 
 window.addEventListener("DOMContentLoaded", async () => {
     await loadPartials();
     await loadTranslations();
     await setLang(currentLang);
-    showBackgroundImage();
-    loadTools();
-    loadContactFlowSection();
+    showDefaultSlogan();
+    setTimeout(fetchSlogans, 3000);
 });
 
 async function loadTranslations() {
@@ -32,6 +81,24 @@ async function loadPartials() {
     fixTestimonialScrolling();
     styleBackToTop();
 }
+
+// Handle smart section navigation
+document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("nav-link")) {
+        e.preventDefault();
+        const target = e.target.getAttribute("data-target");
+        const isHome = location.pathname === "/" || location.pathname === "/index.html";
+
+        if (isHome) {
+            const el = document.getElementById(target);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        } else {
+            window.location.href = `/#${target}`;
+        }
+    }
+});
 
 function updateNavDirection() {
     const navList = document.querySelector("#site-header nav ul");
@@ -67,7 +134,8 @@ function styleBackToTop() {
     `;
         btn.style.position = "fixed";
         btn.style.bottom = "20px";
-        btn.style.right = "20px";
+        btn.style.right = currentLang === "ar" ? "unset" : "20px";
+        btn.style.left = currentLang === "ar" ? "20px" : "unset";
         btn.style.background = "#fff";
         btn.style.border = "1px solid #ccc";
         btn.style.borderRadius = "50%";
@@ -84,19 +152,26 @@ function styleBackToTop() {
 
 async function setLang(lang) {
     currentLang = lang;
+    document.title = currentLang === "ar"
+        ? "ButterFlow.ai – أتمت، حلّق، وتطوّر"
+        : "ButterFlow.ai – Automate, Fly & Grow";
+
     localStorage.setItem("lang", lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     applyTranslation();
     updateNavDirection();
-    showBackgroundImage();
+    showDefaultSlogan();
     await loadTools();
     await loadContactFlowSection();
+    clearInterval(sloganInterval);
+    fetchSlogans();
 }
 
 function toggleLang() {
     const newLang = currentLang === "en" ? "ar" : "en";
-    setLang(newLang);
+    localStorage.setItem("lang", newLang);
+    window.location.reload();
 }
 
 function applyTranslation() {
@@ -116,28 +191,12 @@ function applyTranslation() {
 
     const btn = document.getElementById("backToTop");
     const tooltip = document.getElementById("top-tooltip");
-
-    if (btn) {
+    if (btn && tooltip) {
         const title = currentLang === "ar" ? "العودة للأعلى" : "Back to top";
         btn.title = title;
         btn.setAttribute("aria-label", title);
-
-        // فقط حدّث التولتيب إذا موجود فعلاً
-        if (tooltip) {
-            tooltip.textContent = title;
-
-            // اجعل التولتيب مخفيًا افتراضيًا لمنع التداخل
-            tooltip.style.display = "none";
-
-            btn.addEventListener("mouseenter", () => {
-                tooltip.style.display = "block";
-            });
-            btn.addEventListener("mouseleave", () => {
-                tooltip.style.display = "none";
-            });
-        }
+        tooltip.textContent = title;
     }
-
 }
 
 async function loadTools() {
@@ -163,7 +222,6 @@ async function loadTools() {
 
 async function loadContactFlowSection() {
     if (!document.getElementById("cf-title")) return;
-
     const response = await fetch("/data/tools.json");
     const tools = await response.json();
     const tool = tools.find(t => t.name.toLowerCase() === "contactflow");
@@ -175,22 +233,11 @@ async function loadContactFlowSection() {
     document.getElementById("cf-cta").innerText = tool.cta[currentLang];
 }
 
-function showBackgroundImage() {
-    const bg = document.getElementById("hero-background");
-    const subline = document.getElementById("dynamic-subline");
-    const message = fixedSlogan[currentLang];
-    if (subline) subline.textContent = message;
-    if (bg) {
-        bg.style.display = "flex";
-        bg.style.opacity = "1";
-    }
-}
-
 function hideBackgroundImage() {
     const bg = document.getElementById("hero-background");
     if (bg) {
         bg.style.opacity = "0";
-        setTimeout(() => bg.style.display = "none", 1000);
+        setTimeout(() => bg.style.display = "none", 3000);
     }
 }
 
